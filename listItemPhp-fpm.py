@@ -34,12 +34,9 @@ def main():
     args = sys.argv
     args[1] = "/etc/php-fpm.d/" + args[1] + ".conf"
     hostport = get_listen_host_port(args[1])
-    print hostport
     statuspath = get_status_path(args[1])
-#    pool = get_status(hostport,statuspath,args[2])
+    pool = get_status(hostport,statuspath,args[2])
 
 
 if __name__ == '__main__':
     main()
-
-~
