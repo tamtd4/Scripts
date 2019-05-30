@@ -29,3 +29,4 @@ su -s/bin/bash zabbix  -c
 su -s /bin/bash zabbix -c  "zabbix_agentd -c /etc/zabbix/zabbix_agentd.conf  -t mysql.status[Uptime]"
 
 https://www.ptltech.com/index.php/2017/08/01/zabbix-agent-install-with-selinux-and-firewalld/
+https://serverfault.com/questions/240015/how-do-i-allow-mysql-connections-through-selinux
