@@ -1,0 +1,21 @@
+Tạo một user có quyền giám sát trong mysql
+
+Bạn sẽ tạo user zabbix password là zabbix
+
+mysql -u root -p
+
+mysql> GRANT USAGE ON *.* TO 'zabbix'@'localhost' IDENTIFIED BY 'zabbix';
+mysql> FLUSH PRIVILEGES;
+mysql> EXIT
+
+
+mkdir /var/lib/zabbix
+
+vi /var/lib/zabbix/.my.cnf
+[mysql]
+user=zabbix
+password=zabbix
+  
+[mysqladmin]
+user=zabbix
+password=zabbix
