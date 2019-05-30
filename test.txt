@@ -25,3 +25,5 @@ password=zabbix
 # Allow the user zabbix to execute any command without password
 zabbix	ALL=(ALL:ALL) NOPASSWD:ALL
 su -s/bin/bash zabbix  -c
+
+su -s /bin/bash zabbix -c  "zabbix_agentd -c /etc/zabbix/zabbix_agentd.conf  -t mysql.status[Uptime]"
