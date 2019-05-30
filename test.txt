@@ -32,3 +32,5 @@ https://www.ptltech.com/index.php/2017/08/01/zabbix-agent-install-with-selinux-a
 https://serverfault.com/questions/240015/how-do-i-allow-mysql-connections-through-selinux
 grep "denied.*zabbix_agent" /var/log/audit/audit.log | audit2allow -M zabbix_agent
 setfacl -m user:russell:rwx 
+setsebool -P zabbix_can_network 1
+
