@@ -3,7 +3,7 @@ Tạo một user có quyền giám sát trong mysql
 Bạn sẽ tạo user zabbix password là zabbix
 
 mysql -u root -p
-
+CREATE USER 'zabbix'@'localhost' IDENTIFIED BY 'zabbix';
 mysql> GRANT USAGE ON *.* TO 'zabbix'@'localhost' IDENTIFIED BY 'zabbix';
 mysql> FLUSH PRIVILEGES;
 mysql> EXIT
