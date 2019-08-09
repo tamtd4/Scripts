@@ -5,7 +5,7 @@ my $EXCLUDES='performance_schema|mysql|sys|information_schema';
 
 my @databases;
 my @tables;
-my @databases = `echo "show databases" | HOME=/var/lib/zabbix  /usr/bin/mysql --skip-column-names | egrep -v "$EXCLUDES" 2>&1`;
+my @databases = `echo "show databases" | /usr/bin/mysql --skip-column-names | egrep -v "$EXCLUDES" 2>&1`;
 chomp @databases;
 
 print '{"data":[';
