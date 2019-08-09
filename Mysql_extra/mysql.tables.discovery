@@ -1,17 +1,17 @@
-#! /usr/bin/perl -w
+ #!/usr/bin/perl
 use strict;
 
 my $EXCLUDES='performance_schema|mysql|sys|information_schema';
 
 my @databases;
 my @tables;
-my @databases = `echo "show databases" | HOME=/var/lib/zabbix   mysql --skip-column-names | egrep -v "$EXCLUDES"`;
+my @databases = `echo "show databases" |HOME=/var/lib/zabbix  mysql --skip-column-names | egrep -v "$EXCLUDES"`;
 chomp @databases;
 
 print '{"data":[';
 my $i=0;
 foreach my $database (@databases) {
-    @tables = `echo "show tables" | HOME=/var/lib/zabbix   mysql --skip-column-names $database`;
+    @tables = `echo "show tables" |HOME=/var/lib/zabbix  mysql --skip-column-names $database`;
     chomp @tables;
     foreach my $table (@tables) {
         print "," if $i > 0;
